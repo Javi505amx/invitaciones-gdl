@@ -1,0 +1,55 @@
+<section id="benefits" class="py-20 bg-stone-50">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-4 text-stone-900">
+        Todo lo que tu evento necesita, <span class="italic text-amber-600">sin el papeleo</span>.
+      </h2>
+      <p class="text-lg text-amber-600 text-center max-w-2xl mx-auto mb-16 uppercase tracking-wider font-medium">
+        BENEFICIOS
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          title: "Confirmación RSVP instantánea",
+          description: "Sistema inteligente para confirmar asistencia en tiempo real",
+          icon: "✓"
+        },
+        {
+          title: "Mapas interactivos con GPS",
+          description: "Ubicaciones precisas con rutas optimizadas para sus invitados",
+          icon: "👁️"
+        },
+        {
+          title: "Pases con código QR",
+          description: "Acceso rápido y verificación instantánea de asistentes",
+          icon: "📋"
+        },
+        {
+          title: "Mesa de regalos integrada",
+          description: "Lista de regalos digitales con seguimiento en tiempo real",
+          icon: "⭐"
+        },
+        {
+          title: "Playlist colaborativa de Spotify",
+          description: "Creación conjunta de la música del evento",
+          icon: "🎵"
+        },
+        {
+          title: "Confirmaciones en tiempo real",
+          description: "Seguimiento completo de respuestas y asistencia",
+          icon: "⏱️"
+        }
+      ].map((benefit, index) => (
+        <div key={index} class="luxury-card p-8 group">
+          <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6 text-amber-600 group-hover:bg-amber-200 transition-colors duration-300">
+            <span class="text-xl">{benefit.icon}</span>
+          </div>
+          <h3 class="text-xl font-sans font-bold text-stone-900 mb-4">{benefit.title}</h3>
+          <p class="text-stone-600 leading-relaxed">{benefit.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

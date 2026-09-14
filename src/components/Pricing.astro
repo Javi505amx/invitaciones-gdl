@@ -1,0 +1,97 @@
+<section id="pricing" class="py-20 bg-stone-100">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-4 text-stone-900">
+        Precios <span class="italic text-amber-600">claros</span>, sin sorpresas.
+      </h2>
+      <p class="text-lg text-amber-600 text-center max-w-2xl mx-auto mb-16 uppercase tracking-wider font-medium">
+        NUESTROS PAQUETES
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {[
+        {
+          name: "Básico",
+          price: "$1,299",
+          period: "MXN",
+          description: "Ideal para eventos íntimos con elegancia atemporal",
+          features: [
+            "Diseño personalizado básico",
+            "Confirmación de asistencia",
+            "Mapa de ubicación",
+            "Soporte por correo electrónico",
+            "Versión móvil optimizada"
+          ],
+          cta: "Comenzar con Básico",
+          popular: false
+        },
+        {
+          name: "Pro",
+          price: "$2,499",
+          period: "MXN",
+          description: "Nuestra opción más solicitada para eventos memorables",
+          features: [
+            "Diseño completamente personalizado",
+            "Confirmación y seguimiento inteligente",
+            "Mapa interactivo con rutas",
+            "Cupones exclusivos",
+            "Soporte prioritario",
+            "Estadísticas detalladas",
+            "Integración con redes sociales"
+          ],
+          cta: "Elegir Pro",
+          popular: true
+        },
+        {
+          name: "Premium",
+          price: "$3,999",
+          period: "MXN",
+          description: "La máxima expresión de elegancia digital",
+          features: [
+            "Diseño exclusivo único",
+            "Experiencia interactiva completa",
+            "Mapas y rutas personalizadas",
+            "Cupones premium",
+            "Soporte 24/7 dedicado",
+            "Estadísticas avanzadas",
+            "Integración total con redes sociales",
+            "Pases con código QR",
+            "Animaciones personalizadas"
+          ],
+          cta: "Contratar Premium",
+          popular: false
+        }
+      ].map((tier, tierIdx) => (
+        <div key={tier.name} class={`pricing-card p-8 ${tier.popular ? 'pricing-popular' : ''}`}>
+          <h3 class="text-2xl font-sans font-medium text-stone-900 mb-2">{tier.name}</h3>
+          <div class="mb-6">
+            <p class="text-4xl font-serif text-stone-900">
+              {tier.price} <span class="text-lg font-normal text-stone-600">{tier.period}</span>
+            </p>
+            <p class="text-stone-600 mt-2">{tier.description}</p>
+          </div>
+          
+          <ul class="space-y-3 mb-8">
+            {tier.features.map((feature, featureIdx) => (
+              <li key={featureIdx} class="flex items-start">
+                <svg class="h-5 w-5 text-amber-600 mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-stone-600 text-sm">{feature}</span>
+              </li>
+            ))}
+          </ul>
+          
+          <a
+            href={`https://wa.me/521234567890?text=Hola,%20me%20interesa%20el%20paquete%20${encodeURIComponent(tier.name)}%20para%20mi%20evento`}
+            target="_blank"
+            class={`${tier.popular ? 'btn-primary' : 'btn-secondary'} w-full text-center`}
+          >
+            {tier.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

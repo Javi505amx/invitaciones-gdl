@@ -1,0 +1,168 @@
+
+@import "tailwindcss";
+
+/* ================================
+   Custom Scrollbar
+   ================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f2ed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4a76a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c2a26a;
+}
+
+/* ================================
+   Smooth Scrolling
+   ================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================================
+   Animations
+   ================================ */
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================
+   Button Styles
+   ================================ */
+
+.btn-primary {
+  @apply bg-[#C2A26A] text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 text-sm uppercase tracking-wide;
+}
+
+.btn-secondary {
+  @apply bg-white text-[#C2A26A] border-2 border-[#C2A26A] font-medium py-3 px-8 rounded-full shadow hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-300 text-sm uppercase tracking-wide;
+}
+
+/* ================================
+   Card Styles
+   ================================ */
+
+.card {
+  @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1;
+}
+
+/* ================================
+   Section Headings
+   ================================ */
+
+.section-heading {
+  @apply text-4xl md:text-5xl font-serif font-normal text-center mb-4 text-[#2D2112];
+}
+
+.section-subheading {
+  @apply text-lg text-[#C2A26A] text-center max-w-2xl mx-auto mb-16 font-serif italic;
+}
+
+/* ================================
+   Luxury Card Styles
+   ================================ */
+
+.luxury-card {
+  @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-100;
+}
+
+/* ================================
+   Pricing Card Styles
+   ================================ */
+
+.pricing-card {
+  @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-100;
+}
+
+.pricing-popular {
+  @apply relative;
+}
+
+.pricing-popular::before {
+  content: 'MÁS POPULAR';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #C2A26A;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* ================================
+   Process Step Styles
+   ================================ */
+
+.process-step {
+  @apply text-[#C2A26A] font-bold text-2xl mb-4;
+}
+
+/* ================================
+   FAQ Item Styles
+   ================================ */
+
+.faq-item {
+  @apply border border-gray-200 rounded-lg mb-4 overflow-hidden transition-all duration-300;
+}
+
+.faq-question {
+  @apply px-6 py-4 text-base font-sans text-[#2D2112] cursor-pointer hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center;
+}
+
+.faq-answer {
+  @apply px-6 py-4 text-gray-600 bg-gray-50;
+}
+
+/* ================================
+   Floating Animation
+   ================================ */
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ================================
+   Custom Fonts
+   ================================ */
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+.font-sans {
+  font-family: 'Inter', 'Geist', Arial, sans-serif;
+}

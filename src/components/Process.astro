@@ -1,0 +1,68 @@
+---
+const steps = [
+  {
+    number: "1",
+    title: "Eliges tu paquete y diseño",
+    description: "Selecciona el paquete que mejor se adapte a tu evento y elige entre nuestros diseños exclusivos."
+  },
+  {
+    number: "2",
+    title: "Nos envías los datos de tu evento",
+    description: "Completa un formulario simple con los detalles de tu evento y sube tus fotos preferidas."
+  },
+  {
+    number: "3",
+    title: "Revisas tu vista previa",
+    description: "Te enviamos una vista previa de tu invitación para que apruebes antes de publicarla."
+  },
+  {
+    number: "4",
+    title: "¡Recibes tu link listo para enviar!",
+    description: "Obtén tu enlace personalizado para compartir por WhatsApp, correo o redes sociales."
+  }
+];
+---
+
+<section id="process" class="py-20 bg-gradient-to-br from-stone-50 to-amber-50">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-16">
+      <p class="text-lg text-amber-600 text-center max-w-2xl mx-auto mb-4 uppercase tracking-wider font-medium">
+        ¿CÓMO FUNCIONA?
+      </p>
+      <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-4 text-stone-900">
+        Cuatro pasos y tu invitación está <span class="italic text-amber-600">lista</span>.
+      </h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        {
+          step: "01",
+          title: "Consulta Inicial",
+          description: "Entendemos sus necesidades y visión para el evento"
+        },
+        {
+          step: "02",
+          title: "Diseño Personalizado",
+          description: "Creamos conceptos exclusivos basados en sus preferencias"
+        },
+        {
+          step: "03",
+          title: "Revisión & Ajustes",
+          description: "Refinamos cada detalle hasta su total conformidad"
+        },
+        {
+          step: "04",
+          title: "Lanzamiento & Soporte",
+          description: "Implementamos y ofrecemos soporte durante el evento"
+        }
+      ].map((item, index) => (
+        <div key={index} class="bg-white rounded-2xl p-8 text-center shadow-sm border border-stone-200 hover:shadow-md transition-shadow duration-300">
+          <div class="process-step text-4xl font-sans font-bold text-amber-600 mb-4">{item.step}</div>
+          <h3 class="text-xl font-serif font-medium text-stone-900 mb-4">{item.title}</h3>
+          <p class="text-stone-600">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

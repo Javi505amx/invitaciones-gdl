@@ -1,0 +1,77 @@
+<section id="faq" class="py-20 bg-stone-50">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-4 text-stone-900">
+        Resolvemos tus <span class="italic text-amber-600">dudas</span>.
+      </h2>
+      <p class="text-lg text-amber-600 text-center max-w-2xl mx-auto mb-16 uppercase tracking-wider font-medium">
+        PREGUNTAS FRECUENTES
+      </p>
+    </div>
+    
+    <div class="max-w-3xl mx-auto">
+      {[
+        {
+          question: "¿Qué hace únicas a sus invitaciones digitales?",
+          answer: "Creamos experiencias personalizadas que combinan elegancia visual con funcionalidad impecable. Cada invitación es diseñada para reflejar la exclusividad de su evento."
+        },
+        {
+          question: "¿Cuánto tiempo lleva crear una invitación digital?",
+          answer: "Dependiendo del paquete seleccionado, entregamos su invitación en un plazo de 2 a 7 días hábiles, priorizando siempre la calidad y la atención al detalle."
+        },
+        {
+          question: "¿Ofrecen soporte durante el evento?",
+          answer: "Sí, especialmente con los paquetes Premium y Luxury, ofrecemos soporte durante el evento para garantizar una experiencia perfecta."
+        },
+        {
+          question: "¿Cómo se integran las confirmaciones de asistencia?",
+          answer: "Implementamos un sistema inteligente que permite a sus invitados confirmar asistencia, indicar menú preferido y más, todo en tiempo real."
+        },
+        {
+          question: "¿Puedo personalizar completamente mi invitación?",
+          answer: "Absolutamente. Con nuestros paquetes Premium y Luxury, tendrá libertad creativa completa para personalizar cada aspecto de su invitación."
+        },
+        {
+          question: "¿Qué tipo de estadísticas proporcionan?",
+          answer: "Ofrecemos informes detallados sobre confirmaciones, tasas de apertura, interacciones y otros datos valiosos sobre su evento."
+        }
+      ].map((faq, index) => (
+        <div key={index} class="bg-white rounded-2xl p-6 mb-4 shadow-sm border border-stone-200">
+          <div class="faq-question flex justify-between items-center cursor-pointer py-2">
+            <span class="text-stone-800 font-medium text-lg">{faq.question}</span>
+            <svg 
+              class="w-5 h-5 text-amber-600 flex-shrink-0 ml-4 transition-transform duration-300" 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </div>
+          <div class="faq-answer text-stone-600 pt-4 hidden">
+            {faq.answer}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('svg');
+        
+        answer.classList.toggle('hidden');
+        icon.classList.toggle('rotate-45');
+      });
+    });
+  </script>
+</section>
