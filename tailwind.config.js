@@ -40,5 +40,16 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('primary', '&.btn-primary');
+      addVariant('secondary', '&.btn-secondary');
+      addVariant('card', '&.card');
+      addVariant('luxury-card', '&.luxury-card');
+      addVariant('pricing-card', '&.pricing-card');
+      addVariant('faq-item', '&.faq-item');
+      addVariant('faq-question', '&.faq-question');
+      addVariant('faq-answer', '&.faq-answer');
+    }
+  ],
 }
